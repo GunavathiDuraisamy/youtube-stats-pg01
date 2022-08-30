@@ -1,0 +1,10 @@
+language: node_js
+services:
+  - docker
+
+before install:
+  - docker build -t gunavathiduraisamy/reactapp -f Dockerfile.dev
+
+script:
+  - docker run gunavathiduraisamy/reactapp npm run test -- --coverage
+  
